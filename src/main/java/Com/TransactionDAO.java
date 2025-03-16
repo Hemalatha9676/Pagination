@@ -14,7 +14,7 @@ public class TransactionDAO {
 		Connection con = DataBaseCon.getCon();
 		String query = "SELECT * FROM Transactions LIMIT ?, ?";
 		PreparedStatement ps = con.prepareStatement(query);
-		ps.setInt(1, start - 1);  
+		ps.setInt(1, start );  
 		ps.setInt(2, total);      
 
 		ResultSet rs = ps.executeQuery();
@@ -36,7 +36,7 @@ public class TransactionDAO {
 		 int count = 0;
 
 	        Connection con = DataBaseCon.getCon();
-	        String query = "SELECT COUNT(*) FROM Transactions";
+	        String query = "SELECT COUNT(*) FROM Transactions ";
 	        PreparedStatement ps = con.prepareStatement(query);
 
 	        ResultSet rs = ps.executeQuery();
@@ -47,4 +47,3 @@ public class TransactionDAO {
 	    }
 
 }
-
